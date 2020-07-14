@@ -263,6 +263,7 @@ void ScreenManager_run(ScreenManager* this, Panel** lastFocus, int* lastKey) {
          rescan = true;
          sortTimeout = 0;
       }
+
       if (result & HANDLED) {
          continue;
       } else if (result & BREAK_LOOP) {
@@ -277,7 +278,7 @@ void ScreenManager_run(ScreenManager* this, Panel** lastFocus, int* lastKey) {
          continue;
       }
       case KEY_LEFT:
-      case KEY_CTRL('B'):
+      case 'h':
          if (this->panelCount < 2) {
             goto defaultHandler;
          }
@@ -291,7 +292,7 @@ void ScreenManager_run(ScreenManager* this, Panel** lastFocus, int* lastKey) {
             goto tryLeft;
          break;
       case KEY_RIGHT:
-      case KEY_CTRL('F'):
+      case 'l':
       case 9:
          if (this->panelCount < 2) {
             goto defaultHandler;

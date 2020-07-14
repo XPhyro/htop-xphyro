@@ -1,1 +1,2 @@
 gcc10-fix.diff, https://github.com/hishamhm/htop/pull/981
+htop-vim.patch, https://gist.github.com/bbugyi200/c066a5b56819c629f41f8805804e5204
