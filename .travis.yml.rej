@@ -1,0 +1,8 @@
+--- .travis.yml
++++ .travis.yml
+@@ -8,4 +8,4 @@ os:
+   - linux
+   - osx
+ 
+-script: ./autogen.sh && ./configure && make
++script: ./autogen.sh && ./configure CFLAGS="-O2 -fno-common" && make

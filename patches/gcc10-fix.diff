@@ -1,0 +1,52 @@
+diff --git a/.travis.yml b/.travis.yml
+index 22a5e07c..1cb7a184 100644
+--- a/.travis.yml
++++ b/.travis.yml
+@@ -8,4 +8,4 @@ os:
+   - linux
+   - osx
+ 
+-script: ./autogen.sh && ./configure && make
++script: ./autogen.sh && ./configure CFLAGS="-O2 -fno-common" && make
+diff --git a/CRT.h b/CRT.h
+index 933fe068..65998ac6 100644
+--- a/CRT.h
++++ b/CRT.h
+@@ -140,7 +140,7 @@ extern const char **CRT_treeStr;
+ 
+ extern int CRT_delay;
+ 
+-int* CRT_colors;
++extern int* CRT_colors;
+ 
+ extern int CRT_colorSchemes[LAST_COLORSCHEME][LAST_COLORELEMENT];
+ 
+@@ -150,13 +150,13 @@ extern int CRT_scrollHAmount;
+ 
+ extern int CRT_scrollWheelVAmount;
+ 
+-char* CRT_termType;
++extern char* CRT_termType;
+ 
+ // TODO move color scheme to Settings, perhaps?
+ 
+ extern int CRT_colorScheme;
+ 
+-void *backtraceArray[128];
++extern void *backtraceArray[128];
+ 
+ #if HAVE_SETUID_ENABLED
+ 
+diff --git a/linux/LinuxProcess.h b/linux/LinuxProcess.h
+index 6ce3037d..cbd77be9 100644
+--- a/linux/LinuxProcess.h
++++ b/linux/LinuxProcess.h
+@@ -144,7 +144,7 @@ typedef struct LinuxProcess_ {
+ #endif
+ 
+ 
+-long long btime; /* semi-global */
++extern long long btime; /* semi-global */
+ 
+ extern ProcessFieldData Process_fields[];
+ 
