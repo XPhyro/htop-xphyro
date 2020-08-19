@@ -1,4 +1,4 @@
-# Acknowledgment
+# Acknowledgement
 |          Action         |      Person     |           E-mail           |  Timeline |
 |:-----------------------:|:---------------:|:--------------------------:|:---------:|
 |     Core development    | Hisham Muhammad |    hisham@gobolinux.org    | 2004-2016 |
